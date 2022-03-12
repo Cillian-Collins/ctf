@@ -4,7 +4,7 @@ title: Intigriti CTF — Phorrifyingp
 author: Cillian
 tags: [ctf, web]
 ---
-﻿
+
 In this post I'll discuss the first challenge our team solved as part of the Intigriti CTF. This was a php web challenge where we were given the source and asked to read the contents of the file to retrieve a flag.
 
 <!-- read more -->
