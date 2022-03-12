@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Intigriti CTF: Phorrifyingp
+title: Intigriti CTF — Phorrifyingp
 author: Cillian
 tags: [ctf, web]
 ---
