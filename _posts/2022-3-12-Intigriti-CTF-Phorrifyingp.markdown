@@ -1,4 +1,10 @@
-
+---
+layout: post
+title: Intigriti CTF: Phorrifyingp
+author: Cillian
+tags: [ctf, web]
+---
+Ôªø
 In this post I'll discuss the first challenge our team solved as part of the Intigriti CTF. This was a php web challenge where we were given the source and asked to read the contents of the file to retrieve a flag.
 
 <!-- read more -->
@@ -8,7 +14,7 @@ The source code for the challenge can be seen below:
 
     <?php  
 	    /*  
-	    <flag> ‚û°‚û°‚û° ‚õ≥ÌøÅ ‚¨Ö‚¨Ö‚¨Ö <flag>  
+	    <flag> ‚û°‚û°‚û° ‚õ≥üèÅ ‚¨Ö‚¨Ö‚¨Ö <flag>  
 	    */  
 	    if ($_SERVER['REQUEST_METHOD'] == 'POST'){  
 		    extract($_POST);  
@@ -22,10 +28,10 @@ The source code for the challenge can be seen below:
 		    }  
 		      
 		    if (isset($loggedin) && $loggedin){  
-			    echo 'One step closer Ì∏é<br>';  
+			    echo 'One step closer üòé<br>';  
 		      
 			    if (isset($_GET['action']) && md5($_GET['action']) == $_GET['action']){  
-				    echo 'Really? Ì∏Ö<br>';  
+				    echo 'Really? üòÖ<br>';  
 				      
 				    $db = new SQLite3('database.db');  
 				    $sql_where = Array('1=0');  
@@ -37,7 +43,7 @@ The source code for the challenge can be seen below:
 				    $result = $db->querySingle('SELECT login FROM users WHERE ' . implode(' AND ', $sql_where));  
 				      
 				    if ($result == 'admin'){  
-					    echo 'Last step Ì¥£<br>';  
+					    echo 'Last step ü§£<br>';  
 				      
 					    readfile(file_get_contents('php://input'));  
 					}  
@@ -62,7 +68,7 @@ We can simply pass a loggedin parameter with a value of true.
 
 Once sent, we see the confirmation on the page:
 
-> One step closer Ì∏é
+> One step closer üòé
 
 ## Step 2: It's Magic!
 
@@ -87,7 +93,7 @@ Placing this as a GET parameter, we will get one step closer.
     loggedin=true
 We get the confirmation:
 
-> Really? Ì∏Ö
+> Really? üòÖ
 
 ## Step 3: State Of The Union
 
@@ -110,7 +116,7 @@ Next, we notice that the current state of the query will never be true due to th
 
 We receive the confirmation that we have bypassed this check:
 
-> Last step Ì¥£
+> Last step ü§£
 
 ## Step 4: Traversing The Plane
    
@@ -137,4 +143,3 @@ And we get the flag:
 
 ## Final Notes
 Thanks to all members of "Team Ireland Without RE" with special thanks to [@0daystolive](https://twitter.com/0daystolive).
-
