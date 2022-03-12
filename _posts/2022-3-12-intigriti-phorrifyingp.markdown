@@ -1,10 +1,3 @@
----
-layout: post
-title: Intigriti CTF: Phorrifyingp
-author: Cillian
-tags: [web, ctf]
----
-
 
 In this post I'll discuss the first challenge our team solved as part of the Intigriti CTF. This was a php web challenge where we were given the source and asked to read the contents of the file to retrieve a flag.
 
@@ -144,3 +137,4 @@ And we get the flag:
 
 ## Final Notes
 Thanks to all members of "Team Ireland Without RE" with special thanks to [@0daystolive](https://twitter.com/0daystolive).
+
