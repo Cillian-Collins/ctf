@@ -74,9 +74,10 @@ Once sent, we see the confirmation on the page:
 ## Step 2: It's Magic!
 
     if (isset($_GET['action']) && md5($_GET['action']) == $_GET['action'])
-  The next conditional statement is checking for a GET parameter named "action". This parameter must satisfy the condition that its value is equal to its md5 value.
+
+The next conditional statement is checking for a GET parameter named "action". This parameter must satisfy the condition that its value is equal to its md5 value.
   
-  This seems very unlikely. In fact, it takes a little bit of understanding about php [magic hashes](https://www.whitehatsec.com/blog/magic-hashes/) to understand how this condition could be satisfied.
+This seems very unlikely. In fact, it takes a little bit of understanding about php [magic hashes](https://www.whitehatsec.com/blog/magic-hashes/) to understand how this condition could be satisfied.
 
 In short, the use of "=\=" allows for comparison of different object types. If we wanted to compare the literal value, we'd use "\=\=\=". If we enter a String with a value such as "0e1", this will effectively equal 0 to the power of 1 (which is 0). In fact, 0 to the power of any number will always result in 0.
 
@@ -92,6 +93,7 @@ Placing this as a GET parameter, we will get one step closer.
     Content-Length: 13
     
     loggedin=true
+
 We get the confirmation:
 
 > Really? 😅
@@ -104,6 +106,7 @@ The last conditional statement checks if $result is equal to 'admin'. This value
 Firstly, we encounter errors about "no such column loggedin", which hints that we'll need to find a way to get rid of this part of the query, we can do so by commenting it out.
 
     1--=aaaa&loggedin=true
+
 Next, we notice that the current state of the query will never be true due to the "1=0" condition. This hints towards us using a UNION query to separately select the "admin" entry. We inject this into the parameter name.
 
    
