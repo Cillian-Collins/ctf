@@ -51,6 +51,7 @@ The source code for the challenge can be seen below:
 		    }  
 	    }  
     ?> 
+
 We can see that this challenge will require us to bypass a number of conditional statements in order to execute the final readfile() function, where we will then need to modify our payload so that we can read a file.
 
 ## Step 1: We're Logged In!
