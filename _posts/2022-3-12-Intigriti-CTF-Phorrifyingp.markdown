@@ -108,9 +108,7 @@ Firstly, we encounter errors about "no such column loggedin", which hints that w
 
     1--=aaaa&loggedin=true
 
-Next, we notice that the current state of the query will never be true due to the "1=0" condition. This hints towards us using a UNION query to separately select the "admin" entry. We inject this into the parameter name.
-
-   
+Next, we notice that the current state of the query will never be true due to the "1=0" condition. This hints towards us using a UNION query to separately select the "admin" entry. We inject this into the parameter name.   
 
     POST /?action=0e215962017 HTTP/2
     Host: phorrifyingp.ctf.intigriti.io
