@@ -101,6 +101,7 @@ We get the confirmation:
 ## Step 3: State Of The Union
 
     if ($result == 'admin')
+
 The last conditional statement checks if $result is equal to 'admin'. This value comes from a SQL statement. Each of the parameters we pass in our POST data will become a part of this query. They are joined with the 'AND' condition. The clause array is initially populated with "1=0" which can never be true.
 
 Firstly, we encounter errors about "no such column loggedin", which hints that we'll need to find a way to get rid of this part of the query, we can do so by commenting it out.
