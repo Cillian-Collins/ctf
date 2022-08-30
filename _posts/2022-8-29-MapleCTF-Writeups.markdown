@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CTFZone Writeups
+title: MapleCTF Writeups
 author: Cillian
 tags: [ctf, web, osint]
 ---
