@@ -13,6 +13,7 @@ In this post I'll walk through the solutions for various challenges I solved at 
 
 This challenge presented us with a page, requesting a JSON object for code processing.
 ![We can send code for processing, and view the output](https://i.imgur.com/Zu8h3zD.png)
+
 The code passed is then shown. If we pass a JSON object with some text containing a template such as `{{7*7}}` it will be rendered as `49`.
 
 This is a Server-Side Template Injection challenge. The intended solution involved using SSTI to fetch the unpickle function and deserialize a payload. Fortunately, they only used a simple block list which was easily bypassed by a number of different payloads.
