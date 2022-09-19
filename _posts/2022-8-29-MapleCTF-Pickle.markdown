@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MapleCTF Writeups
+title: MapleCTF — Pickle
 author: Cillian
 tags: [ctf, web, osint]
 ---
