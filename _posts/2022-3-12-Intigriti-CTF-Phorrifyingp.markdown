@@ -14,7 +14,7 @@ The source code for the challenge can be seen below:
 
     <?php  
 	    /*  
-	    <flag> ‚û°‚û°‚û° ‚õ≥ÌøÅ ‚¨Ö‚¨Ö‚¨Ö <flag>  
+	    <flag> ‚û°‚û°‚û° ‚õ≥ÔøΩÔøΩÔøΩ ‚¨Ö‚¨Ö‚¨Ö <flag>  
 	    */  
 	    if ($_SERVER['REQUEST_METHOD'] == 'POST'){  
 		    extract($_POST);  
@@ -28,10 +28,10 @@ The source code for the challenge can be seen below:
 		    }  
 		      
 		    if (isset($loggedin) && $loggedin){  
-			    echo 'One step closer Ì∏é<br>';  
+			    echo 'One step closer ÔøΩÔøΩÔøΩ<br>';  
 		      
 			    if (isset($_GET['action']) && md5($_GET['action']) == $_GET['action']){  
-				    echo 'Really? Ì∏Ö<br>';  
+				    echo 'Really? ÔøΩÔøΩÔøΩ<br>';  
 				      
 				    $db = new SQLite3('database.db');  
 				    $sql_where = Array('1=0');  
@@ -43,7 +43,7 @@ The source code for the challenge can be seen below:
 				    $result = $db->querySingle('SELECT login FROM users WHERE ' . implode(' AND ', $sql_where));  
 				      
 				    if ($result == 'admin'){  
-					    echo 'Last step Ì¥£<br>';  
+					    echo 'Last step ÔøΩÔøΩÔøΩ<br>';  
 				      
 					    readfile(file_get_contents('php://input'));  
 					}  
@@ -69,7 +69,7 @@ We can simply pass a loggedin parameter with a value of true.
 
 Once sent, we see the confirmation on the page:
 
-> One step closer Ì∏é
+> One step closer ÔøΩÔøΩÔøΩ
 
 ## Step 2: It's Magic!
 
@@ -96,7 +96,7 @@ Placing this as a GET parameter, we will get one step closer.
 
 We get the confirmation:
 
-> Really? Ì∏Ö
+> Really? ÔøΩÔøΩÔøΩ
 
 ## Step 3: State Of The Union
 
@@ -119,7 +119,7 @@ Next, we notice that the current state of the query will never be true due to th
 
 We receive the confirmation that we have bypassed this check:
 
-> Last step Ì¥£
+> Last step ÔøΩÔøΩÔøΩ
 
 ## Step 4: Traversing The Plane
    
