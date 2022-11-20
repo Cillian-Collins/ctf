@@ -137,5 +137,7 @@ Well, this is where reconnaissance comes in. Earlier I discovered the endpoint `
 
 Armed with this, I could add that value to the end of the email, and then run it through the SHA-256 method described in the above `p()` function.
 
+Then it's just a matter of adding this value to local storage ("token") and visiting the account page to retrieve the flag.
+
 ## Final Notes
 Credit to other Team Ireland Without RE members who helped out with this. You can find me on Twitter [@LooseSecurity](https://twitter.com/LooseSecurity).
