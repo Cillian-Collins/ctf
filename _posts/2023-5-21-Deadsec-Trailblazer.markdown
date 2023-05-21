@@ -30,7 +30,7 @@ I eventually noticed that adding whitespace at the end of the endpoint didn't ca
 
 I suspected that we would need to add something after `now`. I loaded up a number of different wordlists from [SecLists](https://github.com/danielmiessler/SecLists) and ran them through [ffuf](https://github.com/ffuf/ffuf) to see if anything interesting would happen. I excluded any results which displayed either `Error` or `Bad booiiii`. 
 
-One of these produced an interesting result. A SQLi payload passing ` or 1 > 2` after `now` produced a valid image. I immediately got excited at the prospect of a blind SQLi vulnerability and I loaded up the page only to be greeted with the following:
+One of these produced an interesting result. A SQLi payload passing `` or 1 > 2`` after ``now`` produced a valid image. I immediately got excited at the prospect of a blind SQLi vulnerability and I loaded up the page only to be greeted with the following:
 ![/images/now endpoint](https://i.imgur.com/Lwyz9Xo.jpg)
 
 Well, it looks like we are actually injecting into some Python code. I'm not exactly sure what is causing this, but I think it may be an eval. Anyway, now we just need to get RCE from here, so we will need to use our PyJail knowledge to break out of this!
