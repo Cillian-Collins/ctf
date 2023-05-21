@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Digital Overdose CTF — Pop-Up Bank
