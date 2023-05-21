@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Deadsec — TrailBlazer
-author: Cillian (Team Ireland Without RE)
+author: Cillian (Ireland without the RE)
 tags: [ctf, web]
 ---
 
